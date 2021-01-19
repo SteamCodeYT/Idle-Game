@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <title>Lumberjack Idle Game</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="menus">
+            <div class="main">
+                <button id="chop">Chop Log</button>
+                <button id="visit">Visit Marketplace</button>
+            </div>
+
+            <div class="marketplace">
+                <div class="sellButtons">
+                    <button id="sell1">Sell [1] Log</button>
+                    <button id="sell10">Sell [10] Logs</button>
+                    <button id="sellAll">Sell All Logs</button>
+                </div>
+
+                <div class="upgrades">
+                    <button id="autoChopper">Buy [1] Auto Chopper ($100)</button>
+                </div>
+                <button id="return">Return</button>
+            </div>
+            
+        </div>
+
+        <div class="inventory">
+            <p id="money">Money: $0</p>
+            <p id="logs">You now own 0 logs.</p>
+        </div>
+    </div>
+</body>
