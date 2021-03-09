@@ -1,9 +1,11 @@
 $(document).ready(function(){
     var logs = 0;
+    var pickaxes = 0;
     var money = 0;
     var logPlus = 1;
     var autoLogPlus = 0;
     var autoChopperPrice = 100;
+    var pickaxePrice = 50;
     var logPrice = 1;
     var menu;
 
@@ -47,6 +49,13 @@ $(document).ready(function(){
         changeMarket();
     });
 
+    $("#buyPickaxe").click(function(){
+        money -= pickaxePrice;
+        pickaxes++;
+        changeInventory();
+        changeMarket();
+    });
+
 
     $("#visit").click(function(){
         menu = switchMenu("marketplace");
@@ -65,6 +74,12 @@ $(document).ready(function(){
             $("#logs").html("You now own " + logs + " log.");
         }else{
             $("#logs").html("You now own " + logs + " logs.");
+        }
+
+        if(pickaxes > 0){
+            $("#pickaxes").html("You now own " + pickaxes + " pickaxe(s).");
+        }else{
+            $("#pickaxes").html("");
         }
     }
 
@@ -89,6 +104,12 @@ $(document).ready(function(){
             $("#autoChopper").css("display", "block");
         }else{
             $("#autoChopper").css("display", "none");
+        }
+
+        if(money >= pickaxePrice){
+            $("#buyPickaxe").css("display", "block");
+        }else{
+            $("#buyPickaxe").css("display", "none");
         }
     }
 
