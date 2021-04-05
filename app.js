@@ -1,8 +1,10 @@
 $(document).ready(function(){
     var logs = 0;
+    var stone = 0;
     var pickaxes = 0;
     var money = 0;
     var logPlus = 1;
+    var stonePlus = 1;
     var autoLogPlus = 0;
     var autoChopperPrice = 100;
     var pickaxePrice = 50;
@@ -19,6 +21,15 @@ $(document).ready(function(){
         logs += logPlus;
         changeInventory();
         changeMarket();
+    });
+
+    $("#mineStone").click(function(){
+        if(pickaxes == 0){
+            alert("You have nothing to mine stone with!");
+        }else{
+            stone += stonePlus;
+            changeInventory();
+        }
     });
 
     $("#sell1").click(function(){
@@ -74,6 +85,12 @@ $(document).ready(function(){
             $("#logs").html("You now own " + logs + " log.");
         }else{
             $("#logs").html("You now own " + logs + " logs.");
+        }
+
+        if(stone > 0){
+            $("#stone").html("You now own " + stone + " piece(s) of stone.");
+        }else{
+            $("#stone").html("");
         }
 
         if(pickaxes > 0){
